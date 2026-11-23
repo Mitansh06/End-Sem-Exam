@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Card</title>
+<style>
+body {
+    font-family: Arial;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.card {
+    width: 300px;
+    background: white;
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #aaa;
+}
+
+.banner {
+    height: 100px;
+    background: linear-gradient(135deg, #667eea, purple);
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    background: yellow;
+    border: 5px solid white;
+    border-radius: 50%;
+    margin: -50px auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h2 { margin: 5px; }
+
+p { color: gray; }
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    background: #eee;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+button {
+    background: blue;
+    color: white;
+    border: 0;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button.following {
+    background: white;
+    color: blue;
+    border: 1px solid blue;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="banner"></div>
+
+    <div class="avatar">AK</div>
+
+    <h2>Arjun</h2>
+    <p>Web Developer</p>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>Git</li>
+    </ul>
+
+    <p><span id="count">120</span> followers</p>
+
+    <button id="btn" onclick="follow()">Follow</button>
+</div>
+
+<script>
+let isFollowing = false;
+
+function follow() {
+    isFollowing = !isFollowing;
+
+    document.getElementById("btn").innerText =
+        isFollowing ? "Following" : "Follow";
+
+    document.getElementById("btn").classList.toggle("following");
+
+    document.getElementById("count").innerText =
+        isFollowing ? 121 : 120;
+}
+</script>
+
+</body>
+</html>
